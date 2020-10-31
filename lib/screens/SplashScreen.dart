@@ -1,8 +1,5 @@
 import 'dart:async';
-
-import 'package:circular_reveal_animation/circular_reveal_animation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/circularRevealanim/RevealRoute.dart';
 import 'package:flutter_app/screens/HomeScreen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -21,19 +18,12 @@ class _SpashScreenState extends State<SpashScreen> {
   }
 
   startAnim() async {
-    Timer(
-        Duration(seconds: 3),
-        () {
-          Navigator.pop(context);
-          return Navigator.push(
-          context,
-          RevealRoute(
-            page: HomeScreen(),
-            maxRadius: 800,
-            centerAlignment: Alignment.center,
-          ),
-        );
-        });
+    Timer(Duration(seconds: 1), () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+      );
+    });
   }
 
   @override
